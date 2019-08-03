@@ -1,14 +1,11 @@
-# this one is important
-SET(CMAKE_SYSTEM_NAME Dos)
-
-# the name of the target operating system
+# the name of the target operating system must be Windows
 SET(CMAKE_SYSTEM_NAME Windows)
 
 # which compilers to use for C and C++
 SET(CMAKE_C_COMPILER wcc386)
 SET(CMAKE_CXX_COMPILER wcc386)
 
-
+#add c flags
 string(APPEND CMAKE_C_FLAGS_INIT " -w4 -e25 -od -6r -bt=dos -fo=.obj -mf")
 
 #add c++ flags
@@ -59,8 +56,6 @@ set(CMAKE_BUILD_TYPE_INIT Debug)
 # single/multi-threaded                 /-bm
 # static/DLL run-time libraries         /-br
 # default is setup for multi-threaded + DLL run-time libraries
-# string(APPEND CMAKE_C_FLAGS_INIT " -bt=nt -w3 -dWIN32 -br -bm")
-# string(APPEND CMAKE_CXX_FLAGS_INIT " -bt=nt -xs -w3 -dWIN32 -br -bm")
 foreach(lang C CXX)
   string(APPEND CMAKE_${lang}_FLAGS_DEBUG_INIT " -d2")
   string(APPEND CMAKE_${lang}_FLAGS_MINSIZEREL_INIT " -s -os -d0 -dNDEBUG")
@@ -77,9 +72,6 @@ set(CMAKE_C_CREATE_IMPORT_LIBRARY
   "wlib -c -q -n -b <TARGET_IMPLIB> +<TARGET_QUOTED>")
 set(CMAKE_CXX_CREATE_IMPORT_LIBRARY ${CMAKE_C_CREATE_IMPORT_LIBRARY})
 
-#set(CMAKE_C_LINK_EXECUTABLE
-#	"set CMAKE_MERDA=<OBJECTS> && set CMAKE_MERDA=%CMAKE_MERDA:\"=% && set CMAKE_MERDA	"
-#)
 set(CMAKE_C_LINK_EXECUTABLE
 	"wlink ${CMAKE_START_TEMP_FILE} ${CMAKE_WLINK_QUIET} name <TARGET> <LINK_FLAGS> FILE {<OBJECTS>} <LINK_LIBRARIES> ${CMAKE_END_TEMP_FILE}"
 )
