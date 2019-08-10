@@ -25,7 +25,8 @@ Open Dosbox, mount the correct directory and execute the program.
     hello
 
 ## Limits of this approach
-* Currently it has been tested with only one file and without library support
+* Currently it has been tested with only a few files and static library support
+* Please note that google test only runs under visual studio (I am sure it will run under gcc as well)
 * It has not been yet tested under linux, is it possible to use openwatcom on linux?
 * Toolchain-dos.cmake is a copy of the openwatcom cmake script and is not the correct way to use the tool!
 * Also the system directive is windows, I don't yet know why it won't work with Generic
