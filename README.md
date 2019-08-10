@@ -6,7 +6,8 @@ Apparently it worked for me!
 ## Requirements
 * OpenWatcom
 * Cmake installed (I used the one that came bundled with Visual Studio 2017 CE)
-* DosBox for testing
+* Remember to keep Google Tests enabled if you want unit tests in Visual Studio
+* DosBox for testing the cross-compiled dos executables
 
 ## How to use
 On Windows just execute the setup_watcom_dos.bat file.
@@ -23,6 +24,11 @@ Open Dosbox, mount the correct directory and execute the program.
     C:\
     cd wd\src\hello
     hello
+
+The new library-using example can be found under
+
+    cd wd\src\libuser
+    libuser
 
 ## Limits of this approach
 * Currently it has been tested with only a few files and static library support
