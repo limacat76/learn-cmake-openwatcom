@@ -3,6 +3,8 @@ project(learn-cmake-openwatcom VERSION 0.1 LANGUAGES C)
 
 enable_testing()
 add_subdirectory(src/hello)
+add_subdirectory(src/alibrary)
+add_subdirectory(src/libuser)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT hello)
 

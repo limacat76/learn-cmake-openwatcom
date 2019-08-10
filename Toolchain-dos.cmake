@@ -3,7 +3,7 @@ SET(CMAKE_SYSTEM_NAME Windows)
 
 # which compilers to use for C and C++
 SET(CMAKE_C_COMPILER wcc386)
-SET(CMAKE_CXX_COMPILER wcc386)
+SET(CMAKE_CXX_COMPILER wpp386)
 
 #add c flags
 string(APPEND CMAKE_C_FLAGS_INIT " -w4 -e25 -od -6r -bt=dos -fo=.obj -mf")
